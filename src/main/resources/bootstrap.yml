@@ -1,0 +1,21 @@
+server:
+    port: 9999
+
+nacos-addr: http://127.0.0.1:8848
+
+spring:
+    application:
+        name: signup-server
+    cloud:
+        nacos:
+            discovery:
+                server-addr: ${nacos-addr}
+                namespace: 9047add0-deee-4b4e-912f-220a53d31165
+            config:
+                server-addr: ${nacos-addr}
+                file-extension: yml
+                namespace: 9047add0-deee-4b4e-912f-220a53d31165
+                group: SERVER
+                shared-configs:
+                    - data-id: server-common-config.yml
+                      group: COMMON
